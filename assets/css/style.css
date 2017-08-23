@@ -4,7 +4,7 @@ body {
 }
 
 div {
-    margin: 10px;
+    margin: 100px;
 }
 
 form {
@@ -12,11 +12,16 @@ form {
 }
 
 #animalButtons {
-    margin: 10px;
+    margin: 20px;
 }
 
+
+
 #animal-form {
-    margin: 10px;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    float: right;
 }
 
 #animal-input {
@@ -29,4 +34,10 @@ form {
 
 #animals {
     margin: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.gifTopic {
+	margin: 5px;
 }
