@@ -30,10 +30,11 @@ function renderButtons() {
   }
 }
 
-$(document).on("click", ".gifTopic", fuckAnimal);
+$(document).on("click", ".gifTopic", summonAnimals);
 
-function fuckAnimal(){
-  console.log("I got here.");
+function summonAnimals(){
+  // console.log("I was here.");
+  $("animals").empty();
   var animal = $(this).attr("data-animal");
   var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
         animal + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -46,11 +47,12 @@ function fuckAnimal(){
           for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div class='item'>");
             var rating = results[i].rating;
-            var p = $("<p>").text("Rating: " + rating);
+            var ratingString = "Rating: " + rating;
+            var p = $("<p>").html(ratingString);
             var animalImage = $("<img>");
             animalImage.attr("src", results[i].images.fixed_height.url);
             gifDiv.prepend(p);
-            gifDiv.prepend(animalImage);
+            gifDiv.append(animalImage);
             $("#animals").prepend(gifDiv);
     }
   });
